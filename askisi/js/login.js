@@ -6,8 +6,6 @@ window.onload = function() {
     }
     localStorage.setItem('users', JSON.stringify(users));
 
-
-
     var loginForm = document.getElementById('login-form');
     loginForm.addEventListener('submit', check);
     function check(event) {
