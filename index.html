@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Admin Dashboard</title>
+    <script src="https://kit.fontawesome.com/b356d73572.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <div class="logo">Dashboard</div>
+            <div class="sidebar-content">
+                <ul>
+                    <li><a href="#">🏡 Home</a></li>
+                    <li><a href="#">👤 Profile</a></li>
+                    <li><a href="#">💬 Messages</a></li>
+                    <li><a href="#">🕘 History</a></li>
+                    <li><a href="#">📄 Tasks</a></li>
+                    <li><a href="#">👪 Communities</a></li>
+                </ul>
+            </div>
+            <div class="sidebar-comp">
+                <ul>
+                    <li><a href="#">⚙️ Settings</a></li>
+                    <li><a href="#">❓ Support</a></li>
+                    <li><a href="#">🔒 Privacy</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="right">
+            <header class="header">
+                <div class="top">
+                    <div class="top-left">
+                        <i class="fa-sharp fa-solid fa-magnifying-glass"></i>
+                        <input type="text" name="search" id="search">
+                    </div>
+                    <div class="top-right">
+                        <i class="fa-regular fa-bell"></i>
+                        <img src="./user.png" alt="">
+                        <h3>Notkatsa</h3>
+                    </div>
+                </div>
+                <div class="bottom">
+                    <div class="user">
+                        <img src="./user.png" alt="">
+                        <div class="user-right">
+                            <h4>Hi there,</h4>
+                            <h2>Notis Katsaitis (@Notkatsa)</h2>
+                        </div>
+                    </div>
+                    <div class="bottom-right">
+                        <button>New</button>        
+                        <button>Upload</button>
+                        <button>Share</button>
+                    </div>
+                </div>
+            </header>
+            <div class="content">
+                <div class="projects">
+                    <h3>Your Projects</h3>
+                    <div class="projects-grid">
+                        <div class="project">
+                            <h4>Coolest Project Ever</h4>
+                            <proj-content>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur vel provident ducimus </proj-content>
+                        </div>
+                        <div class="project">
+                            <h4>Super Cool Project</h4>
+                            <proj-content>Temporibus debitis ullam excepturi architecto obcaecati modi numquam molestiae cumque nulla reiciendis dignissimos, et</proj-content>
+                        </div>
+                        <div class="project">
+                            <h4>Impossible App</h4>
+                            <proj-content>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur vel provident ducimusdelectus, voluptates, laboriosam accusamus!</proj-content>
+                        </div>
+                        <div class="project">
+                            <h4>Ad Blocker</h4>
+                            <proj-content>Temporibus debitis ullam excepturi architecto obcaecati modi numquam molestiae cumque nulla reiciendis dignissimos, et</proj-content>
+                        </div>
+                        <div class="project">
+                            <h4>Easy Peasy App</h4>
+                            <proj-content>Temporibus debitis ullam excepturi architecto obcaecati modi numquam molestiae cumque nulla reiciendis dignissimos, et</proj-content>
+                        </div>
+                        <div class="project">
+                            <h4>Less Cool App</h4>
+                            <proj-content>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur vel provident ducimusdelectus</proj-content>
+                        </div>
+                    </div>
+                </div>
+                <div class="announcements">
+                    <h3>Announcements</h3>
+                    <div class="side-content">
+                        <h4>Site Maintenance</h4>
+                        <p>Lorem iipsum dolor sit amet consectetur adipisicing elit. Libero dicta quis corrupti cumque commodi recusandae illum aperiam similique natus.</p>
+                        <hr>
+                        <h4>Community Share Day</h4>
+                        <p>Aliquid nam iusto explicabo assumenda repellendus officiis rerum iste. Ea, vel cumque commodi recusandae illum aperiam similique.</p>
+                        <hr>
+                        <h4>Updated Privacy Policy</h4>
+                        <p>Libero dicta quis corrupti cumque commodi recusandae illum aperiam similique natus. Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    </div>
+                </div>
+                <div class="trending">
+                    <h3>Trending</h3>
+                    <div class="side-content">
+                        <div class="user">
+                            <img src="user.png" alt="">
+                            <div class="user-right">
+                                <div class="username">@mhtsos</div>
+                                <div class="quote">World Builder</div>
+                            </div>
+                        </div>
+                        <div class="user">
+                            <img src="user.png" alt="">
+                            <div class="user-right">
+                                <div class="username">@khtsos</div>
+                                <div class="quote">Patates Tiganites</div>
+                            </div>
+                        </div>
+                        <div class="user">
+                            <img src="user.png" alt="">
+                            <div class="user-right">
+                                <div class="username">@tsonos</div>
+                                <div class="quote">3D animations</div>
+                            </div>
+                        </div>
+                        <div class="user">
+                            <img src="user.png" alt="">
+                            <div class="user-right">
+                                <div class="username">@xristos</div>
+                                <div class="quote">Super Cool Project</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
