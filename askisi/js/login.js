@@ -1,37 +1,29 @@
-window.onload = function() {
+var loginForm = document.getElementById('login-form');
+loginForm.addEventListener('submit', check);
+function check(event) {
+    event.preventDefault();
 
-    var users = [];
-    for (var i=1; i<=10; i++) {
-        users.push({name:'user'+i, pw:'password'+i, fullName:'Full Name'+i});
-    }
-    localStorage.setItem('users', JSON.stringify(users));
+    var storedData = JSON.parse(localStorage.getItem('users'));
 
-    var loginForm = document.getElementById('login-form');
-    loginForm.addEventListener('submit', check);
-    function check(event) {
-        event.preventDefault();
+    var userName = document.getElementById('userName').value;
+    var userPw = document.getElementById('userPass').value;
 
-        var storedData = JSON.parse(localStorage.getItem('users'));
+    // Check if entered data matches stored data
+    var validUser = storedData.some(function(user) {
+        if(user.name === userName && user.pw === userPw) {
+            sessionStorage.setItem('login', JSON.stringify(user))
+            return 1
 
-        var userName = document.getElementById('userName').value;
-        var userPw = document.getElementById('userPass').value;
-
-        // Check if entered data matches stored data
-        var validUser = storedData.some(function(user) {
-            if(user.name === userName && user.pw === userPw) {
-                sessionStorage.setItem('login', JSON.stringify(user))
-                return 1
-
-            }else {
-                return 0
-            }
-        });
-
-        if (validUser) {
-            alert("logged in.");
-        } else {
-            alert("ERROR");
+        }else {
+            return 0
         }
+    });
 
+    if (validUser) {
+        alert("logged in.");
+        window.location.href = "info.html";
+    } else {
+        alert("ERROR");
     }
+
 }
