@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Courses</title>
-    <link rel="stylesheet" href="./css/edited-style.css">
+    <link rel="stylesheet" href="./css/course.css">
 </head>
 <body>
     <div class="container">
@@ -21,6 +21,7 @@
                     <button id="button-info">Πληροφορίες</button>        
                     <button id="button-grades">Βαθμολογία</button>
                     <button id="button-courses">Μαθήματα</button>
+
                     <button id="button-dilosi">Δήλωση</button>        
                     <button id="button-sec">Γραμματεία</button>
                     <button id="button-history">Ιστορικό</button>
@@ -29,8 +30,406 @@
         </div>
         <div class="content">
             <h2>Μαθήματα</h2>
-            
-        </div>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+    <title>Course Grades</title>
+    <style>
+        body {
+            background-color: white;
+        }
+        .container {
+            padding-top: 20px;
+        }
+        h2 {
+            padding-bottom: 10px;
+        }
+        .table {
+            width: 100%;
+            margin-bottom: 1rem;
+            color: #212529;
+        }
+        .table th {
+            vertical-align: bottom;
+            border-bottom: 2px solid #dee2e6;
+        }
+        .table td {
+            padding: .75rem;
+            vertical-align: top;
+            border-top: 1px solid #dee2e6;
+        }
+        .thead-dark th {
+            color: #fff;
+            background-color: white;
+            border-color: black;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Εξάμηνο: 1o</h2>
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">ΚΩΔ.</th>
+                    <th scope="col">ECTS</th>
+                    <th scope="col">Μάθημα</th>
+                    <th scope="col">S1</th>
+                    <th scope="col">S2</th>
+                    <th scope="col">S3</th>
+                    <th scope="col">S4</th>
+                    <th scope="col">S5</th>
+                    <th scope="col">S6</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Repeat this row for each course -->
+                <tr>
+                    <td>K03</td>
+                    <td>6</td>
+                    <td> <a href="#" data-toggle="modal" data-target="#lessonDetailsModalK03">Ανάλυση I</a></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>K09</td>
+                    <td>7</td>
+                    <td><a href="#" data-toggle="modal" data-target="#lessonDetailsModal">Διακριτά Μαθηματικά(Υ)</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td> ΓΠ07</td>
+                    <td>2</td>
+                    <td>
+                        <a href="#" data-toggle="modal" data-target="#lessonDetailsModal">Εισαγωγή στην Πληροφορική και στις Τηλεπικοινωνίες(ΓΠ) </td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>						
+                   
+                    <td> Κ04</td>
+                    <td>7</td>
+                    <td><a href="#" data-toggle="modal" data-target="#lessonDetailsModal">Εισαγωγή στον Προγραμματισμό(Υ)
+                       </td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td> Κ02ε</td>
+                    <td>2</td>
+                    <td> 
+                        <a href="#" data-toggle="modal" data-target="#lessonDetailsModal">Εργαστήριο Λογικής Σχεδίασης(ΑΠΕ)
+                    </td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td> Κ02</td>
+                    <td>6</td>
+                    <td> 
+                        <a href="#" data-toggle="modal" data-target="#lessonDetailsModal">Λογικής Σχεδίασης(Υ)
+                    </td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+            <div class="modal fade" id="detailsModalK03" tabindex="-1" role="dialog" aria-labelledby="detailsModalLabelK03" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="detailsModalLabelK03">Course Details: Ανάλυση I</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <p>Total Hours: [X hours]</p>
+                            <p>Teacher: [Teacher's Name]</p>
+                            <p>Books Required: [List of Books]</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        <h2>Εξάμηνο: 2o</h2>
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">ΚΩΔ.</th>
+                    <th scope="col">ECTS</th>
+                    <th scope="col">Μάθημα</th>
+                    <th scope="col">S1</th>
+                    <th scope="col">S2</th>
+                    <th scope="col">S3</th>
+                    <th scope="col">S4</th>
+                    <th scope="col">S5</th>
+                    <th scope="col">S6</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Repeat this row for each course -->
+                <tr>
+                    <td>K01</td>
+                    <td>8</td>
+                    <td>Αναλυση I(Υ)</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>K14</td>
+                    <td>7</td>
+                    <td>Αρχιτεκτονική Υπολογιστών I(Υ)</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td> Κ08</td>
+                    <td>7</td>
+                    <td>
+                     Δομές Δεδομένων και Τεχνικές Προγραμματισμού(Υ)</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>						
+                   
+                    <td> Κ20β</td>
+                    <td>6</td>
+                    <td>Εφαρμοσμένα Μαθηματικά(Π)
+                       </td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td> Κ12</td>
+                    <td>8</td>
+                    <td> 
+                        Ηλεκτρομαγνητισμός - Οπτική και Σύγχρονη Φυσική(Υ)
+                    </td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>          
+        </table>
+
+
+
+     <h2>Εξάμηνο: 3o</h2>
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">ΚΩΔ.</th>
+                    <th scope="col">ECTS</th>
+                    <th scope="col">Μάθημα</th>
+                    <th scope="col">S1</th>
+                    <th scope="col">S2</th>
+                    <th scope="col">S3</th>
+                    <th scope="col">S4</th>
+                    <th scope="col">S5</th>
+                    <th scope="col">S6</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Repeat this row for each course -->
+                <tr>
+                    <td>K06</td>
+                    <td>8</td>
+                    <td>Ανάλυση II</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>K10</td>
+                    <td>8</td>
+                    <td>Αντικειμενοστραφής Προγραμματισμός</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td> Κ11ε</td>
+                    <td>2</td>
+                    <td>Εργαστήριο Κυκλωμάτων και Συστημάτων(AΠΕ)
+                       </td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>						
+                   
+                    <td> Κ13</td>
+                    <td>6</td>
+                    <td>Πιθανότητες και Στατιστική(Υ)
+                       </td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td> Κ11ε</td>
+                    <td>6</td>
+                    <td> 
+                        Σήματα και Συστήματα(Υ)
+                    </td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <!-- Additional rows -->
+            </tbody>
+        </table>
+
+     <h2>Εξάμηνο: 4ο</h2>
+     <table class="table">
+         <thead class="thead-dark">
+             <tr>
+                 <th scope="col">ΚΩΔ.</th>
+                 <th scope="col">ECTS</th>
+                 <th scope="col">Μάθημα</th>
+                 <th scope="col">S1</th>
+                 <th scope="col">S2</th>
+                 <th scope="col">S3</th>
+                 <th scope="col">S4</th>
+                 <th scope="col">S5</th>
+                 <th scope="col">S6</th>
+             </tr>
+         </thead>
+         <tbody>
+             <!-- Repeat this row for each course -->
+             <tr>
+                 <td>K17</td>
+                 <td>8</td>
+                 <td>Αλγόριθμοι και Πολυπλοκότητα(Υ)</td>
+                 <td></td>
+                 <td></td>
+                 <td></td>
+                 <td></td>
+                 <td></td>
+                 <td></td>
+             </tr>
+             <tr>
+                 <td>K16</td>
+                 <td>6</td>
+                 <td>Δίκτυα Επικοινωνιών I</td>
+                 <td></td>
+                 <td></td>
+                 <td></td>
+                 <td></td>
+                 <td></td>
+                 <td></td>
+             </tr>
+             <tr>
+                 <td> Κ16ε</td>
+                 <td>2</td>
+                 <td>Εργαστήριο Δικτύων Επικοινωνιών I(AΠΕ)
+                    </td>
+                 <td></td>
+                 <td></td>
+                 <td></td>
+                 <td></td>
+                 <td></td>
+                 <td></td>
+             </tr>
+             <tr>						
+                
+                 <td> Κ21</td>
+                 <td>7</td>
+                 <td>Συστήματα Επικοινωνιών(Υ)
+                    </td>
+                 <td></td>
+                 <td></td>
+                 <td></td>
+                 <td></td>
+                 <td></td>
+                 <td></td>
+             </tr>
+             <tr>
+                 <td> Κ29</td>
+                 <td>7</td>
+                 <td> 
+                     Σχεδίαση και Χρήση Βάσεων Δεδομένων(Υ)
+                 </td>
+                 <td></td>
+                 <td></td>
+                 <td></td>
+                 <td></td>
+                 <td></td>
+                 <td></td>
+             </tr>
+             <!-- Additional rows -->
+         </tbody>
+     </table>
+    </div>
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+</body>
+</html>
+
       </div>
       <script src="./js/name.js"></script>
       <script src="./js/change_pages.js"></script>
