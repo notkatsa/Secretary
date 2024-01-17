@@ -32,6 +32,11 @@ window.onload = function () {
     
     // sec history
     if (localStorage.getItem("sec") === null) {
-        localStorage.setItem('sec', "");
-    }
+        var sec = [];
+        for (var i=1; i<10; i++) {
+            sec.push({sdi: 'sdi'+210000+i, reqs: []});
+        }
+        localStorage.setItem('sec', JSON.stringify(sec));             
+    }     
+
 }
