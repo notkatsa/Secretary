@@ -10,7 +10,7 @@
     <div class="container">
         <div class="header">
             <div class="left">
-                <div class="logo">LOGO</div>
+                <div class="logo"><img src="images/logo.jpeg"width="70" height="80"></div>
             </div>
             <div class="right">
                 <div class="top">
@@ -37,34 +37,7 @@
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
     <title>Course Grades</title>
     <style>
-        body {
-            background-color: white;
-        }
-        .container {
-            padding-top: 20px;
-        }
-        h2 {
-            padding-bottom: 10px;
-        }
-        .table {
-            width: 100%;
-            margin-bottom: 1rem;
-            color: #212529;
-        }
-        .table th {
-            vertical-align: bottom;
-            border-bottom: 2px solid #dee2e6;
-        }
-        .table td {
-            padding: .75rem;
-            vertical-align: top;
-            border-top: 1px solid #dee2e6;
-        }
-        .thead-dark th {
-            color: #fff;
-            background-color: white;
-            border-color: black;
-        }
+       
     </style>
 </head>
 <body>
@@ -87,9 +60,10 @@
             <tbody>
                 <!-- Repeat this row for each course -->
                 <tr>
+                    
                     <td>K03</td>
                     <td>6</td>
-                    <td> <a href="#" data-toggle="modal" data-target="#lessonDetailsModalK03">Ανάλυση I</a></td>
+                    <td> <a href="#" data-toggle="modal" data-target="#lessonDetailsModalK03">Γραμμική Άλγεβρα(Υ)</a></td>
                     <td></td>
                     <td></td>
                     <td></td>
@@ -147,6 +121,7 @@
                     <td></td>
                 </tr>
                 <tr>
+                    
                     <td> Κ02</td>
                     <td>6</td>
                     <td> 
@@ -161,24 +136,32 @@
                 </tr>
             </tbody>
         </table>
-            <div class="modal fade" id="detailsModalK03" tabindex="-1" role="dialog" aria-labelledby="detailsModalLabelK03" aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="detailsModalLabelK03">Course Details: Ανάλυση I</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body">
-                            <p>Total Hours: [X hours]</p>
-                            <p>Teacher: [Teacher's Name]</p>
-                            <p>Books Required: [List of Books]</p>
-                        </div>
+        <div class="modal fade" id="lessonDetailsModalK03" tabindex="-1" role="dialog" aria-labelledby="detailsModalLabelK03" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="detailsModalLabelK03">Λεπτομέρειες Μαθήματος: Γραμμική Άλγεβρα</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Τύπος Μαθήματος: Υποχρεωτικό </p>
+                        <p>Διδακτικές ώρες: 3 Θεωρίας και
+                                            2 Φροντιστηρίου </p>
+                        <p>Διδάσκον: Βαγγέλης Νικολάου</p>
+                        <p>Βιβλιογραφία: 1) Εισαγωγή στη Γραμμική Άλγεβρα Βάρσος, Δεριζιώτης, Μαλιάκας,Ταλέλλη
+                            2) Γραμμική Άλγεβρα, Δονάτος, Αδάμ</p>
+                        <p>Σύντομη Περιγραφή Μαθήματος: 
+                            Το μάθημα καλύπτει βασικά και προχωρημένα θέματα της Γραμμικής Άλγεβρας, 
+                            που αποτελούν απαραίτητο υπόβαθρο σε όλους τους  κλάδους των Θετικών Επιστημών.
+                             Εισαγωγικές έννοιες, Πίνακες, Συστήματα Γραμμικών Εξισώσεων, Διανυσματικοί χώροι, Γραμμικές
+                              απεικονίσεις, Γραμμικές απεικονίσεις και πίνακες, Πολυώνυμα, Ιδιοτιμές και Διαγωνισιμότητα, 
+                              Κανονικές μορφές, Διαγωνοποίηση Ερμιτιανών πινάκων, Διανυσματικοί χώροι με εσωτερικό γινόμενο. </p>
                     </div>
                 </div>
             </div>
-
+        </div>
 
         <h2>Εξάμηνο: 2o</h2>
         <table class="table">
@@ -338,7 +321,7 @@
                     <td></td>
                     <td></td>
                 </tr>
-                <!-- Additional rows -->
+                
             </tbody>
         </table>
 
@@ -419,7 +402,7 @@
                  <td></td>
                  <td></td>
              </tr>
-             <!-- Additional rows -->
+            
          </tbody>
      </table>
     </div>
