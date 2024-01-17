@@ -1,9 +1,9 @@
 window.onload = function () {
     // setup users
-    if (localStorage.getItem("user") === null) {
+    if (localStorage.getItem("users") === null) {
         var users = [];
         for (var i=1; i<10; i++) {
-            users.push({name:'user'+i, pw:'password'+i, fullName:'Full Name'+i, sdi: 'sdi'+210000+i});
+            users.push({name:'user'+i, pw:'password'+i, fullName:'Full Name'+i, sdi: 'sdi'+210000+i, email: 'student'+i+'@di.uoa.gr'});
         }
         localStorage.setItem('users', JSON.stringify(users));
     }
@@ -11,8 +11,6 @@ window.onload = function () {
     // setup grades
     if (localStorage.getItem("grades") === null) {
         var grades = [];
-
-
         for (var i=1; i<10; i++) {
 
             courses = ['Γραμμική Άλγεβρα', 'Διακριτά Μαθηματικά', 'Εισαγωγή στην Πληροφορική και στις Τηλεπικοινωνίες',
@@ -31,6 +29,9 @@ window.onload = function () {
 
         localStorage.setItem('grades', JSON.stringify(grades));
     } 
-
-    // setup 
+    
+    // sec history
+    if (localStorage.getItem("sec") === null) {
+        localStorage.setItem('sec', "");
+    }
 }
