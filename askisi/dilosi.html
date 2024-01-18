@@ -29,10 +29,26 @@
         </div>
         <div class="content">
             <h2>Δήλωση Μαθημάτων</h2>
-            <div class="small">Αναζήτησε το μάθημα που θέλεις να προσθέσεις. Διάλεξε όσα μαθήματα θες να δηλώσεις </div>
-        </div>
+            <div class="small">
+                Αναζήτησε το μάθημα που θέλεις να προσθέσεις. Διάλεξε όσα μαθήματα θες να δηλώσεις. Έπειτα διάλεξε Αποθήκευση για προσωρινή αποθήκευση ή Υποβολή για οριστική υποβολή στην Γραμματεία. </div>
+                <input type="text" name="search" id="search" placeholder="Αναζήτηση Μαθήματος">
+                <ul id="courses-list"></ul>
+                <table id="selected-courses">
+                    <thead>
+                        <tr>
+                            <th>Επιλεγμένα Μαθήματα</th>
+                            <th>Διαγραφή</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+                <button id="save-button">Αποθήκευση</button>
+                <button id="submit-button">Υποβολή</button>
+            </div>
+
       </div>
       <script src="./js/name.js"></script>
       <script src="./js/change_pages.js"></script>
+      <script src="./js/dilosi.js"></script>
 </body>
 </html>
