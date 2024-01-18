@@ -17,6 +17,15 @@ body {
     justify-content: flex-start;
 }
 
+input {
+    border: none;
+    border-radius: 1.5rem;
+    font-size: 20px;
+    background-color: #d0e6e6;
+    width: 400px;
+    height: 30px;
+}
+
 .header {
     color: #e6e0e9;
     margin: 5px;
