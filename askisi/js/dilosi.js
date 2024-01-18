@@ -24,7 +24,7 @@ function updateDisplayedCourses(searchTerm) {
 
             // Add a click event listener to the course item
             listItem.addEventListener('click', () => {
-                if(!isReadOnly){
+                if(!isReadOnly && !(selectedCourses.has(course)) ){
                     addCourseToTable(course);
                 }
             });
@@ -57,14 +57,28 @@ function removeCourseFromTable(course, row) {
     row.remove();
 }
 function saveToSessionStorage() {
+    // Check if the login object exists
+    if (!sessionStorage.getItem('login')) {
+        alert('Login is required for this function. Redirecting to login page.');
+        window.location.href = 'login.html'; // Redirect to the login page
+        return;
+    }
     sessionStorage.setItem('selectedCourses', JSON.stringify(Array.from(selectedCourses)));
     sessionStorage.setItem('isReadOnly', JSON.stringify(isReadOnly)); // Save isReadOnly flag
 }
 
 function saveToLocalStorage() {
+    // Check if the login object exists
+    if (!sessionStorage.getItem('login')) {
+        alert('Login is required for this function. Redirecting to login page.');
+        window.location.href = 'login.html'; // Redirect to the login page
+        return;
+    }
     sessionStorage.setItem('selectedCourses', JSON.stringify(Array.from(selectedCourses)));
     localStorage.setItem('selectedCourses', JSON.stringify(Array.from(selectedCourses)));
     isReadOnly = true; // Make the table read-only after submission
+    sessionStorage.setItem('isReadOnly', JSON.stringify(isReadOnly)); // Save isReadOnly flag
+
     disableRemoveButtons();
     disableSubmitButton();
 }
@@ -79,7 +93,7 @@ function loadFromSessionStorage() {
             selectedCourses.add(course);
         });
     }
-    if (savedIsReadOnly) {
+    if (savedIsReadOnly==="true") {
         isReadOnly = JSON.parse(savedIsReadOnly); // Set isReadOnly from sessionStorage
         disableRemoveButtons();
         disableSubmitButton();
