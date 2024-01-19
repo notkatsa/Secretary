@@ -1,7 +1,21 @@
 // Sample array of courses
-const courses = ['Ανάλυση Ι', 'Αρχιτεκτονική Υπολογιστών Ι', 'Δομές Δεδομένων και Τεχνικές Προγραμματισμού', 'Εφαρμοσμένα Μαθηματικά', 'Ηλεκτρομαγνητισμός - Οπτική και Σύγχρονη Φυσική'];
+const courses = ['Ανάλυση Ι', 'Αρχιτεκτονική Υπολογιστών Ι', 'Δομές Δεδομένων και Τεχνικές Προγραμματισμού', 'Εφαρμοσμένα Μαθηματικά', 'Ηλεκτρομαγνητισμός - Οπτική και Σύγχρονη Φυσική',
+'Ανάλυση ΙΙ', 'Αντικειμενοστραφής Προγραμματισμός', 'Πιθανότητες και Στατιστική', 'Σήματα και Συστήματα', 'Αλγόριθμοι και Πολυπλοκότητα', 'Δίκυτα Επικοινωνιών Ι', 'Εργαστήριο Δικύων Επικοινωνιών Ι', 'Συστήματα Επικοινωνιών Ι', 'Σχεδίαση και Χρήση Βάσεων Δεδομένων'];
 const selectedCourses = new Set();
 let isReadOnly = false;
+
+const contentDiv = document.querySelector('.content');
+
+// Create a new div element
+const additionalContentDiv = document.createElement('div');
+additionalContentDiv.classList.add('additional-content');
+
+// Set the content of the new div
+message = '<p>Μπορείς να δηλώσεις ακόμα ' + eval(8-selectedCourses.size) + ' μαθήματα.</p>';
+additionalContentDiv.innerHTML = message;
+
+// Append the new div to the existing content
+contentDiv.appendChild(additionalContentDiv);
 
 // Function to filter courses based on user input
 function filterCourses(searchTerm) {
@@ -18,6 +32,7 @@ function updateDisplayedCourses(searchTerm) {
 
     // Display the filtered courses
     filteredCourses.forEach(course => {
+        if (coursesList.childNodes.length>5) {return;}
         if (!selectedCourses.has(course)) {
             const listItem = document.createElement('li');
             listItem.textContent = course;
@@ -35,6 +50,10 @@ function updateDisplayedCourses(searchTerm) {
 }
 
 function addCourseToTable(course) {
+    if (selectedCourses.size>=8) {
+        alert("Έφτασες το μέγιστο αριθμό μαθημάτων!")
+        return;
+    }
     selectedCourses.add(course);
 
     const tableBody = document.querySelector('#selected-courses tbody');
@@ -50,11 +69,16 @@ function addCourseToTable(course) {
         removeCourseFromTable(course, newRow);
     });
     cell2.appendChild(removeButton);
+    message = '<p>Μπορείς να δηλώσεις ακόμα ' + eval(8-selectedCourses.size) + ' μαθήματα.</p>';
+    additionalContentDiv.innerHTML = message;
+    
 }
 
 function removeCourseFromTable(course, row) {
     selectedCourses.delete(course);
     row.remove();
+    message = '<p>Μπορείς να δηλώσεις ακόμα ' + eval(8-selectedCourses.size) + ' μαθήματα.</p>';
+    additionalContentDiv.innerHTML = message;
 }
 function saveToSessionStorage() {
     // Check if the login object exists
@@ -110,6 +134,7 @@ function disableRemoveButtons() {
 
 function disableSubmitButton() {
     document.getElementById('submit-button').disabled = true;
+    document.getElementById('save-button').disabled = true;
 }
 
 // Event listener for input changes

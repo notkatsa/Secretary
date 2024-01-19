@@ -36,5 +36,6 @@ window.onload = function () {
             sec.push({sdi: 'sdi'+210000+i, reqs: []});
         }
         localStorage.setItem('sec', JSON.stringify(sec));             
-    }
+    }     
+
 }

@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit Profile</title>
     <link rel="stylesheet" href="./css/course.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
 </head>
 <body>
     <div class="container">
@@ -15,7 +17,9 @@
             <div class="right">
                 <div class="top">
                     <div class="name" id="name">Panagiotis</div>
-                    <div class="usericon">D</div>
+                    <div class="usericon">   
+                         <i class="fas fa-user-edit"></i>
+                    </div>
                 </div>
                 <div class="bottom">
                     <button id="button-info">Πληροφορίες</button>        
@@ -37,15 +41,15 @@
                 <form id="editProfileForm">
                     <div class="form-group">
                         <label for="firstName">Όνομα</label>
-                        <input type="text" id="firstName" name="firstName" disabled value="Βαγγέλης">
+                        <input type="text" id="firstName" name="firstName" disabled >
                     </div>
                     <div class="form-group">
                         <label for="lastName">Επώνυμο</label>
-                        <input type="text" id="lastName" name="lastName" disabled value="Νικολάου">
+                        <input type="text" id="lastName" name="lastName" disabled >
                     </div>
                     <div class="form-group">
                         <label for="phoneNumber">Άριθμος Μητρώου</label>
-                        <input type="tel" id="id" name="id" disabled value="1115202100121">
+                        <input type="tel" id="id" name="id" disabled >
                     </div>
                     <div class="form-group">
                         <label for="email">Email</label>
@@ -73,5 +77,6 @@
       </div>
       <script src="./js/name.js"></script>
       <script src="./js/change_pages.js"></script>
+      <script src="./js/editprofile.js"></script>
 </body>
 </html>

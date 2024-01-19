@@ -16,3 +16,12 @@ document.getElementById("button-sec").onclick = function () {
 document.getElementById("button-history").onclick = function () {
     location.href = "./history.html"
 }
+document.getElementById("button-info").onclick = function () {
+    location.href = "./teacherinfo.html"
+}
+document.getElementById("button-grades").onclick = function () {
+    location.href = "./teachergrades.html"
+}
+document.getElementById("button-courses").onclick = function () {
+    location.href = "./teachercourses.html"
+}
