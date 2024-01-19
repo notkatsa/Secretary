@@ -1,19 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
 * {
     font-family: 'Roboto';
     margin: 0;
+    box-sizing: border-box; /* Include this to properly calculate element dimensions */
 }
-
 
 body {
     display: block;
 }
-.mt5 {
-    color: rgb(255, 255, 255);
-}
-.thread-dark{
-    color:white;
-}
+
 .container {
     background-color: white;
     display: flex;
@@ -23,12 +19,25 @@ body {
 }
 
 .header {
-    color: #e6e0e9;
     margin: 5px;
     width: 100%;
     display: flex;
     align-items: center;
-    justify-content:flex-start;
+    justify-content: flex-start;
+}
+
+.usericon {
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 50%;
+    background-color: #3498db; /* You can change the background color as needed */
+    color: #fff; /* Text color */
+    font-size: 18px;
+    margin-left: 10px; /* Adjust the margin as needed */
+}
+
+.usericon:hover {
+    background-color: #2980b9; /* Change the hover background color as needed */
 }
 
 .right {
@@ -39,11 +48,12 @@ body {
 }
 
 .top {
-    width:100%;
+    width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
 }
+
 .bottom {
     margin-top: 10px;
     display: flex;
@@ -63,6 +73,13 @@ h2 {
     padding: 15px;
     padding-left: 10px;
 }
+
+h3 {
+    padding:15px;
+    padding-left: 10px;
+    font-weight: bold;
+}
+
 p {
     padding: 10px;
 }
@@ -80,30 +97,54 @@ input[type="tel"] {
     line-height: 20px;
     border: 1px solid #ddd;
     border-radius: 4px;
-    }
-    input[type="text"]:disabled,
-input[type="email"]:disabled,
-input[type="tel"]:disabled {
-background-color: #f7f7f7;
-cursor: not-allowed;
 }
 
-button {
-background-color: black;
-color: white;
-padding: 10px 20px;
-border: none;
-border-radius: 4px;
-cursor: pointer;
+input[type="text"]:disabled,
+input[type="email"]:disabled,
+input[type="tel"]:disabled {
+    background-color: #f7f7f7;
+    cursor: not-allowed;
+}
+
+button,
+.submit-button {
+    background-color: black;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 5px;
+    font-size: 16px;
+}
+
+table {
+    margin: 5px;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #c8c8c8;
+}
+
+tr:hover {
+    background-color: #f5f5f5;
 }
 
 button:disabled {
     background-color: grey;
-    cursor:default;
+    cursor: default;
 }
 
 button:hover {
-background-color: black;
+    background-color: black;
 }
 
 .history-card {
@@ -120,31 +161,197 @@ background-color: black;
 .history-card h3 {
     margin-top: 0;
 }
+
 body {
     background-color: white;
 }
+
 .container {
     padding-top: 20px;
 }
+
 h2 {
     padding-bottom: 10px;
 }
-.table {
+
+#search {
     width: 100%;
-    margin-bottom: 1rem;
-    color: #212529;
+    padding: 10px;
+    border: 2px solid #3498db;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.3s ease;
 }
-.table th {
-    vertical-align: bottom;
-    border-bottom: 2px solid #dee2e6;
+
+#search:focus {
+    outline: none;
+    border-color: #2ecc71;
 }
-.table td {
-    padding: .75rem;
-    vertical-align: top;
-    border-top: 1px solid #dee2e6;
+
+/* Styling the matching courses list */
+#courses-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    margin-bottom: 3rem;
 }
-.thead-dark th {
-    color: #fff;
-    background-color: white;
-    border-color: black;
+
+.small {
+    margin-bottom: 3rem;
 }
+
+#courses-list li {
+    padding: 10px;
+    margin: 5px 0;
+    background-color: #f2f2f2;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#courses-list li:hover {
+    background-color: #e0e0e0;
+}
+
+/* Additional content at the bottom */
+.additional-content {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #3498db;
+    color: white;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.additional-content p {
+    margin: 0;
+}
+
+/* Additional styling for form elements */
+#sign-form {
+    max-width: 400px;
+    margin: auto;
+}
+
+label {
+    margin-top: 10px;
+}
+
+select,
+input[type="text"],
+input[type="email"],
+input[type="tel"] {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    border-radius: 4px;
+}
+
+select:focus,
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus {
+    outline: none;
+    border-color: #3498db;
+}
+
+.error {
+    color: red;
+    font-size: 14px;
+}
+
+/* button {
+    background-color: #3498db;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+} */
+/* Style for select options */
+select {
+    position: relative;
+    appearance: none; /* Remove default arrow */
+    -webkit-appearance: none; /* For older versions of Chrome/Safari */
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+    font-size: 16px;
+}
+
+select:focus {
+    outline: none;
+    border-color: #3498db;
+}
+
+/* Custom dropdown arrow */
+select::after {
+    content: '\25BC'; /* Unicode character for down arrow */
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    color: #555;
+}
+
+/* Style for select options */
+select option {
+    padding: 10px;
+    background-color: #f2f2f2;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+select option:hover {
+    background-color: #e0e0e0;
+}
+
+
+button:hover,
+.submit-button:hover {
+    background-color: #2186c4;
+}
+
+/* Adjustments for form layout and spacing */
+.input {
+    margin-bottom: 20px;
+}
+
+/* Responsive design adjustments */
+@media only screen and (max-width: 600px) {
+    #sign-form {
+        width: 90%;
+    }
+}
+
+.history-card,
+.history-card-sec,
+.history-card-selected-courses {
+    border: 3px solid #000000;
+    padding: 1px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    background-color: #f2f2f2;
+}
+
+.history-card h3,
+.history-card-sec h3,
+.history-card-selected-courses h3 {
+    margin-top: 0;
+    padding: 10px;
+    background-color: #c8c8c8;
+}
+
+.history-card p,
+.history-card-sec p,
+.history-card-selected-courses p {
+    padding: 10px;
+}
+
