@@ -1,14 +1,13 @@
-document.getElementById("button-grades").onclick = function () {
+document.getElementById("button-grades1").onclick = function () {
     location.href = "./teachergrades.html"
 }
-document.getElementById("button-info").onclick = function () {
+document.getElementById("button-info1").onclick = function () {
     location.href = "./teacherinfo.html"
 }
-document.getElementById("button-courses").onclick = function () {
+document.getElementById("button-courses1").onclick = function () {
     location.href = "./teachercourses.html"
 }
 document.getElementById("submitGradesBtn").onclick = function () {
-    console.log("Redirecting to teachersgrades.html");
     location.href = "./teachergrades.html";
 };
 
