@@ -28,8 +28,7 @@ window.onload = function () {
         }
 
         localStorage.setItem('grades', JSON.stringify(grades));
-    } 
-    
+    }
     // sec history
     if (localStorage.getItem("sec") === null) {
         var sec = [];
@@ -37,6 +36,5 @@ window.onload = function () {
             sec.push({sdi: 'sdi'+210000+i, reqs: []});
         }
         localStorage.setItem('sec', JSON.stringify(sec));             
-    }     
-
+    }
 }
