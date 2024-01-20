@@ -29,12 +29,12 @@ document.addEventListener("DOMContentLoaded", function () {
         
         var amElement = document.getElementById("ΑΜ");
         if (amElement.value !== user.sdi) {
-            alert("AM Mismatch");
+            alert("Διαφορετικά AM");
             return;
         }
 
         if (formIsValid) {
-            alert("Request has been successfully made!");
+            alert("Έγινε Αίτηση Πιστοποιητικού!");
             // Additional actions after successful submission
             sec_list = JSON.parse(localStorage.getItem("sec"));  
             studentObject = sec_list.find(student => student.sdi === user.sdi)
@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 localStorage.setItem("sec", JSON.stringify(sec_list));
             }
         } else {
-            alert("Please fill in all the required fields.");
+            alert("Παρακαλώ συμπληρώστε όλα τα στοιχεία.");
         }
 
     })

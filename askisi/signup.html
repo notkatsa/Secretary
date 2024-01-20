@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="./css/signup.css">
+</head>
+<body>
+    <div class="container">
+        <div class="content">
+            <h2>Δημιουργία Λογαριασμού</h2>
+            <form id="addUserForm">
+                <label for="name">Username:</label>
+            <input type="text" id="name" required>
+            
+            <label for="password">Κωδικός:</label>
+            <input type="password" id="password" required>
+            
+            <label for="fullName">Ονοματεπώνυμο:</label>
+            <input type="text" id="fullName" required>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" required>
+            
+            <!-- Button to trigger the addUserToLocalStorage function -->
+            <button type="button" id="signup_btn" onclick="addUser()">Δημιουργία Λογαριασμού</button>
+        </div>
+        </form>
+    </div>
+    <script src="./js/setup_fake_db.js"></script>
+    <script src="./js/signup.js"></script>
+</body>
+</html>

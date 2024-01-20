@@ -1,7 +1,7 @@
 grades = null;
 if (sessionStorage.getItem("login") === null) {
     var newH2 = document.createElement("h2");
-    var textNode = document.createTextNode("Please log in to view grades!");
+    var textNode = document.createTextNode("Συνδεθέιτε για να δείτε τους βαθμούς σας!");
     
     var linkElement = document.createElement("a");
     linkElement.href = "login.html"
@@ -20,17 +20,18 @@ else  {
     grades = student.grades;
 
     var AllButton = document.createElement("button");
-    AllButton.textContent = "All";
+    AllButton.textContent = "Όλα";
     AllButton.addEventListener("click", () => createTableAndPrintButton(grades));
     
     passedGrades = grades.filter(course => course[Object.keys(course)[0]] >= 5);
     var PassedButton = document.createElement("button");
-    PassedButton.textContent = "Passed";
+    PassedButton.textContent = "Επιτυχίες";
     PassedButton.addEventListener("click", () => createTableAndPrintButton(passedGrades));
     
     failedGrades = grades.filter(course => course[Object.keys(course)[0]] < 5);
+    sessionStorage.setItem("failedCourses", JSON.stringify(failedGrades));
     var failedButton = document.createElement("button");
-    failedButton.textContent = "Failed";
+    failedButton.textContent = "Αποτυχίες";
     failedButton.addEventListener("click", () => createTableAndPrintButton(failedGrades));
     
     var contentDiv = document.getElementById("content");
@@ -93,7 +94,7 @@ function createTableAndPrintButton(grades) {
     contentDiv.appendChild(table);
 
     var printButton = document.createElement("button");
-    printButton.textContent = "Print";
+    printButton.textContent = "Εκτύπωση";
     printButton.addEventListener("click", function () {
     // Use html2pdf to generate a PDF from the table
     var pdfOptions = {

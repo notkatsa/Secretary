@@ -4,7 +4,9 @@ document.addEventListener("DOMContentLoaded", function () {
   // Fetch user info from localStorage
   const userInfo = JSON.parse(localStorage.getItem("userInfo"));
   const users = JSON.parse(localStorage.getItem("users"));
-  const currentUserId = "sdi2100001"; // You can dynamically get this based on the logged-in user
+  
+  loggedUser = JSON.parse(sessionStorage.getItem("login"));
+  currentUserId = loggedUser.sdi;
 
   // Find the user's data in the userInfo array
   const currentUserData = userInfo.find(user => user.sdi === currentUserId);
@@ -30,8 +32,8 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("date").value = currentUserData.dateOfBirth;
   }
 
-  if (currentUserData.address !== -1) {
-    document.getElementById("address").value = currentUserData.address;
+  if (currentUserData.Address !== -1) {
+    document.getElementById("address").value = currentUserData.Address;
   }
 
   // Submit form event listener

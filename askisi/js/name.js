@@ -1,6 +1,6 @@
 if (sessionStorage.getItem("login") === null) {
-    document.getElementById("name").innerHTML = "Hello Stranger. Login for more Function.";
+    document.getElementById("name").innerHTML = "";
 } else {
     user = JSON.parse(sessionStorage.getItem("login"));
-    document.getElementById("name").innerHTML = user.fullName;
+    document.getElementById("name").innerHTML = user.fullName;    
 }

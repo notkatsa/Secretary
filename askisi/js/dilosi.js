@@ -10,8 +10,56 @@ const contentDiv = document.querySelector('.content');
 const additionalContentDiv = document.createElement('div');
 additionalContentDiv.classList.add('additional-content');
 
+failedGrades = JSON.parse(sessionStorage.getItem("failedCourses"));
+failedDiv = document.getElementById("failedPlaceholder");
+if (failedGrades && failedGrades.length > 0) {
+    createFailedButton(failedGrades);
+}
+function createFailedButton(failedGrades) {
+    const failedButton = document.createElement('button');
+    failedButton.textContent = 'Πρόσθεσε τα χρωστούμενα';
+    const successMessageDiv = document.createElement('div');
+    successMessageDiv.style.color = 'green'; // Set the color of the success message
+
+    failedButton.addEventListener('click', () => {
+        failedGrades.forEach(failedCourseObj => {
+            const failedCourseName = Object.keys(failedCourseObj)[0]; // Get the course name
+            if (!selectedCourses.has(failedCourseName))
+                addCourseToTable(failedCourseName);
+        });
+        successMessageDiv.textContent = 'Τα χρωστούμενα προστέθηκαν επιτυχώς!';
+    });
+
+    // Append the button to the failedDiv
+    failedDiv.appendChild(failedButton);
+    failedDiv.appendChild(successMessageDiv)
+}
+
+
+// Event listener for input changes
+document.getElementById('search').addEventListener('input', function () {
+    const searchTerm = this.value;
+    if (searchTerm==="") {
+        const coursesList = document.getElementById('courses-list');
+        coursesList.innerHTML = '';
+        
+        return;
+    }
+    updateDisplayedCourses(searchTerm);
+});
+
+document.getElementById('save-button').addEventListener('click', saveToSessionStorage);
+document.getElementById('submit-button').addEventListener('click', saveToLocalStorage);
+
+loadFromSessionStorage();
+
 // Set the content of the new div
-message = '<p>Μπορείς να δηλώσεις ακόμα ' + eval(8-selectedCourses.size) + ' μαθήματα.</p>';
+var message;
+if (sessionStorage.getItem("isReadOnly")!== null){
+    message = 'Η δήλωση έχει υποβληθεί οριστικά.';}
+else
+    {message = '<p>Μπορείς να δηλώσεις ακόμα ' + eval(8-selectedCourses.size) + ' μαθήματα.</p>';}
+
 additionalContentDiv.innerHTML = message;
 
 // Append the new div to the existing content
@@ -83,9 +131,12 @@ function removeCourseFromTable(course, row) {
 function saveToSessionStorage() {
     // Check if the login object exists
     if (!sessionStorage.getItem('login')) {
-        alert('Login is required for this function. Redirecting to login page.');
+        alert('Απαιτείται σύνδεση. Μεταφέρεστε στην σελίδα σύνδεσης.');
         window.location.href = 'login.html'; // Redirect to the login page
         return;
+    }
+    else {
+        alert("Αποθηκεύτηκε Επιτυχώς.")
     }
     sessionStorage.setItem('selectedCourses', JSON.stringify(Array.from(selectedCourses)));
     sessionStorage.setItem('isReadOnly', JSON.stringify(isReadOnly)); // Save isReadOnly flag
@@ -94,9 +145,15 @@ function saveToSessionStorage() {
 function saveToLocalStorage() {
     // Check if the login object exists
     if (!sessionStorage.getItem('login')) {
-        alert('Login is required for this function. Redirecting to login page.');
+        alert('Απαιτείται σύνδεση. Μεταφέρεστε στην σελίδα σύνδεσης.');
         window.location.href = 'login.html'; // Redirect to the login page
         return;
+    }
+    else {
+        // alert("Υποβλήθηκε επιτυχώς.")
+        var isConfirmed = window.confirm("Θέλετε σίγουρα να υποβάλετε οριστικά την δήλωση;");
+        if (!isConfirmed) return;
+
     }
     sessionStorage.setItem('selectedCourses', JSON.stringify(Array.from(selectedCourses)));
     localStorage.setItem('selectedCourses', JSON.stringify(Array.from(selectedCourses)));
@@ -123,7 +180,6 @@ function loadFromSessionStorage() {
         disableSubmitButton();
     }
 }
-loadFromSessionStorage();
 
 function disableRemoveButtons() {
     const removeButtons = document.querySelectorAll('#selected-courses tbody button');
@@ -137,17 +193,3 @@ function disableSubmitButton() {
     document.getElementById('save-button').disabled = true;
 }
 
-// Event listener for input changes
-document.getElementById('search').addEventListener('input', function () {
-    const searchTerm = this.value;
-    if (searchTerm==="") {
-        const coursesList = document.getElementById('courses-list');
-        coursesList.innerHTML = '';
-
-        return;
-    }
-    updateDisplayedCourses(searchTerm);
-});
-
-document.getElementById('save-button').addEventListener('click', saveToSessionStorage);
-document.getElementById('submit-button').addEventListener('click', saveToLocalStorage);

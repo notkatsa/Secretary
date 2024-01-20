@@ -1,0 +1,125 @@
+/*signup.css*/
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+body {
+    font-family: 'Roboto';
+    background-color: #3498db;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.content {
+    padding: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+#signup_btn {
+    background-color: #3498db;
+    color: black;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#signup_btn:hover {
+    background-color: #2980b9;
+}
+
+.logo {
+    display: block;
+    margin: 0 auto 20px; /* Center the logo above the form */
+    max-width: 100%; /* Ensure the logo doesn't exceed its container */
+}
+
+/* Additional styling for form elements */
+#sign-form {
+    max-width: 400px;
+    margin: auto;
+}
+
+label {
+    margin-top: 10px;
+}
+
+select,
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    border-radius: 4px;
+}
+
+select:focus,
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+input[type="password"]:focus {
+    outline: none;
+    border-color: #3498db;
+}
+
+/* Custom dropdown arrow */
+select::after {
+    content: '\25BC'; /* Unicode character for down arrow */
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    color: #555;
+}
+
+/* Style for select options */
+select option {
+    padding: 10px;
+    background-color: #f2f2f2;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+select option:hover {
+    background-color: #e0e0e0;
+}
+
+.error {
+    color: red;
+    font-size: 14px;
+}
+
+/* Responsive design adjustments */
+@media only screen and (max-width: 600px) {
+    #sign-form {
+        width: 90%;
+    }
+}
