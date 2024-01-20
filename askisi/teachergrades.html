@@ -5,52 +5,73 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/course.css">
-    <title>Info</title>
-    <script src="https://kit.fontawesome.com/b356d73572.js"></script>
-    <body>
-        <div class="container">
-          <div class="header">
-              <div class="left">
-                  <div class="logo"><img src="images/logo.jpeg"width="70" height="80"></div>
-              </div>
-              <div class="right">
-                  <div class="top">
-                      <div class="name" id="name">Panagiotis</div>
-                      <div class="usericon">D</div>
-                  </div>
-                  <div class="bottom">
-                      <button id="button-info">Πληροφορίες</button>        
-                      <button id="button-grades">Βαθμολογία</button>
-                      <button id="button-courses">Μαθήματα</button>
-                      <button id="button-dilosi">Δήλωση</button>        
-                      <button id="button-sec">Γραμματεία</button>
-                      <button id="button-history">Ιστορικό</button>
-                  </div>
-              </div>
-          </div>
-          <div class="content">
-        <h2>Teacher's Dashboard</h2>
-
-        <!-- Section for Viewing Courses -->
-        <div id="coursesSection">
-            <h3>Courses for Grade Submission</h3>
-            <!-- Dynamically list courses here -->
+    <title>Grades</title>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="left">
+                <div class="logo"><img src="images/logo.jpeg" width="70" height="80"></div>
+            </div>
+            <div class="right">
+                <div class="top">
+                    <div class="name" id="name">Panagiotis</div>
+                    <div class="usericon">D</div>
+                </div>
+                <div class="bottom">
+                    <button id="button-info1">Πληροφορίες</button> 
+                    <button id="button-courses1">Μαθήματα</button>       
+                    <button id="button-grades1">Βαθμολογία</button>                  
+                </div>
+            </div>
         </div>
 
-        <!-- Section for Creating New Gradebook -->
-        <div id="newGradebookSection">
-            <h3>Create New Gradebook</h3>
-            <!-- Form for creating a new gradebook -->
-        </div>
+        <section class="course-selection">
+            <label for="courseDropdown">Choose a Course:</label>
+            <select id="courseDropdown" class="course-dropdown"></select>
+        </section>
 
-        <!-- Section for Gradebook Tracking -->
-        <div id="gradebookTrackingSection">
-            <h3>Gradebook Tracking</h3>
-            <!-- Display gradebooks with status (temporary or finalized) -->
-        </div>
+        <section class="grade-actions">
+            <button id="viewGradesBtn" class="action-btn">Παρακολούθηση Βαθμολογίας</button>
+            <button id="submitGradesBtn1" class="action-btn">Υποβολή Βαθμολογίας</button>
+        </section>
+
+        <section id="viewGradesSection" class="grades-section" style="display:none;">
+            <h2>Παρακολούθηση Βαθμολογίας</h2>
+            <table id="viewGradesTable" class="grades-table">
+                <thead>
+                    <tr>
+                        <th>Αριθμός Μητρώου</th>
+                        <th>Μαθήμα</th>
+                        <th>Βαθμός</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Grades will be populated here -->
+                </tbody>
+            </table>
+        </section>
+
+        <section id="submitGradesSection" class="grades-section" style="display:none;">
+            <h2>Υποβολή Βαθμολογίας</h2>
+            <table id="submitGradesTable" class="grades-table">
+                <thead>
+                    <tr>
+                        <th>Αριθμός Μητρώου</th>
+                        <th>Μαθήμα</th>
+                        <th>Βαθμός</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Inputs for new grades will be populated here -->
+                </tbody>
+            </table>
+            <button id="saveGradesBtn" class="save-btn">Αποθήκευση Βαθμών</button>
+        </section>
     </div>
 
+    <script src="./js/teachergrades.js"></script>
     <script src="./js/name.js"></script>
-    <script src="./js/change_pages.js"></script>
+    <script src="./js/change_pages_teachers.js"></script>
 </body>
 </html>

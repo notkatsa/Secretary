@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/course.css">
+    <title>Info</title>
+
+    <body>
+        <div class="container">
+          <div class="header">
+              <div class="left">
+                  <div class="logo"><img src="images/logo.jpeg"width="70" height="80"></div>
+              </div>
+              <div class="right">
+                  <div class="top">
+                      <div class="name" id="name">Panagiotis</div>
+                      <div class="usericon">D</div>
+                  </div>
+                  <div class="bottom">
+                      <button id="button-info1">Πληροφορίες</button> 
+                      <button id="button-courses1">Μαθήματα</button>       
+                      <button id="button-grades1">Βαθμολογία</button>                  </div>
+              </div>
+          </div>
+          <div class="container">
+            <h1>Dashboard</h1>
+    
+            <div id="courseSelection">
+                <h2>Επιλογή Μαθήματος</h2>
+                <select id="courseDropdown">
+                </select>
+                <button id="submitGradesBtn">Υποβολή Βαθμών</button>
+            </div>
+    
+            
+            <div id="studentGrades" style="display:none;">
+                <h2>Βαθμοί Μαθητών</h2>
+                <form id="gradesForm">
+                    <table id="gradesTable">
+                        <thead>
+                            <tr>
+                                <th>Αριθμός Μητρώου</th>
+                                <th>Όνομα</th>
+                                <th>Βαθμός</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Student rows will be added here -->
+                        </tbody>
+                    </table>
+                    <input type="submit" value="Submit Grades">
+                </form>
+            </div>
+        </div>
+    
+            
+    <script src="./js/name.js"></script>
+    <script src="./js/teacherscourses.js"></script>
+    <script src="./js/change_pages_teachers.js"></script>
+   
+
+</body>
+</html>
