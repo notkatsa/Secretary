@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Courses</title>
-    <link rel="stylesheet" href="./css/course.css">
+    <link rel="stylesheet" href="../css/course.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
 </head>
@@ -12,13 +12,16 @@
     <div class="container">
         <div class="header">
             <div class="left">
-                <div class="logo"><img src="images/logo.jpeg"width="70" height="80"></div>
+                <div class="logo"><img src="../images/logo.jpeg"width="70" height="80"></div>
             </div>
             <div class="right">
                 <div class="top">
                     <div class="name" id="name">Panagiotis</div>
                     <div class="usericon">    
                         <i class="fas fa-user-edit"></i>
+                    </div>
+                    <div class="logout-button" onclick="logout()">
+                        <i class="fas fa-sign-out-alt"></i>
                     </div>
                 </div>
                 <div class="bottom">
@@ -34,17 +37,6 @@
         </div>
         <div class="content">
             <h2>Μαθήματα</h2>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
-    <title>Course Grades</title>
-    <style>
-    </style>
-</head>
-<body>
-    <div class="container">
         <h2>Εξάμηνο: 1o</h2>
         <table class="table">
             <thead class="thead-dark">
@@ -66,8 +58,7 @@
                     
                     <td>K03</td>
                     <td>6</td>
-                    <td> <a href="#" data-toggle="modal" data-target="#lessonDetailsModalK03">Γραμμική Άλγεβρα(Υ)</a></td>
-                    <td></td>
+                    <td><a href="#" onclick="openModal('lessonDetailsModalK03')">Γραμμική Άλγεβρα(Υ)</a></td>                    <td></td>
                     <td></td>
                     <td></td>
                     <td></td>
@@ -139,33 +130,26 @@
                 </tr>
             </tbody>
         </table>
-        <div class="modal fade" id="lessonDetailsModalK03" tabindex="-1" role="dialog" aria-labelledby="detailsModalLabelK03" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="detailsModalLabelK03">Λεπτομέρειες Μαθήματος: Γραμμική Άλγεβρα</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <p>Τύπος Μαθήματος: Υποχρεωτικό </p>
-                        <p>Διδακτικές ώρες: 3 Θεωρίας και
-                                            2 Φροντιστηρίου </p>
-                        <p>Διδάσκον: Βαγγέλης Νικολάου</p>
-                        <p>Βιβλιογραφία: 1) Εισαγωγή στη Γραμμική Άλγεβρα Βάρσος, Δεριζιώτης, Μαλιάκας,Ταλέλλη
-                            2) Γραμμική Άλγεβρα, Δονάτος, Αδάμ</p>
-                        <p>Σύντομη Περιγραφή Μαθήματος: 
-                            Το μάθημα καλύπτει βασικά και προχωρημένα θέματα της Γραμμικής Άλγεβρας, 
-                            που αποτελούν απαραίτητο υπόβαθρο σε όλους τους  κλάδους των Θετικών Επιστημών.
-                             Εισαγωγικές έννοιες, Πίνακες, Συστήματα Γραμμικών Εξισώσεων, Διανυσματικοί χώροι, Γραμμικές
-                              απεικονίσεις, Γραμμικές απεικονίσεις και πίνακες, Πολυώνυμα, Ιδιοτιμές και Διαγωνισιμότητα, 
-                              Κανονικές μορφές, Διαγωνοποίηση Ερμιτιανών πινάκων, Διανυσματικοί χώροι με εσωτερικό γινόμενο. </p>
-                    </div>
-                </div>
+        <div id="lessonDetailsModalK03" class="modal-overlay">
+            <div class="modal-content">
+              <span class="close-btn" onclick="closeModal('lessonDetailsModalK03')">&times;</span>
+              <div class="modal-body">
+                <p>Τύπος Μαθήματος: Υποχρεωτικό </p>
+                <p>Διδακτικές ώρες: 3 Θεωρίας και 2 Φροντιστηρίου </p>
+                <p>Διδάσκον: Βαγγέλης Νικολάου</p>
+                <p>Βιβλιογραφία: 1) Εισαγωγή στη Γραμμική Άλγεβρα Βάρσος, Δεριζιώτης, Μαλιάκας,Ταλέλλη
+                  2) Γραμμική Άλγεβρα, Δονάτος, Αδάμ</p>
+                <p>Σύντομη Περιγραφή Μαθήματος: 
+                  Το μάθημα καλύπτει βασικά και προχωρημένα θέματα της Γραμμικής Άλγεβρας, 
+                  που αποτελούν απαραίτητο υπόβαθρο σε όλους τους κλάδους των Θετικών Επιστημών.
+                  Εισαγωγικές έννοιες, Πίνακες, Συστήματα Γραμμικών Εξισώσεων, Διανυσματικοί χώροι, Γραμμικές
+                  απεικονίσεις, Γραμμικές απεικονίσεις και πίνακες, Πολυώνυμα, Ιδιοτιμές και Διαγωνισιμότητα, 
+                  Κανονικές μορφές, Διαγωνοποίηση Ερμιτιανών πινάκων, Διανυσματικοί χώροι με εσωτερικό γινόμενο. 
+                </p>
+              </div>
             </div>
-        </div>
-
+          </div>
+          
         <h2>Εξάμηνο: 2o</h2>
         <table class="table">
             <thead class="thead-dark">
@@ -410,14 +394,27 @@
      </table>
     </div>
     
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-</body>
-</html>
 
       </div>
       <script src="./js/name.js"></script>
       <script src="./js/change_pages.js"></script>
+      <script>
+        // Function to open the modal
+        function openModal(modalId) {
+          document.getElementById(modalId).style.display = 'flex';
+        }
+      
+        // Function to close the modal
+        function closeModal(modalId) {
+          document.getElementById(modalId).style.display = 'none';
+        }
+      
+        // Close the modal if the overlay is clicked
+        window.onclick = function(event) {
+          if (event.target.className === 'modal-overlay') {
+            closeModal('lessonDetailsModalK03');
+          }
+        };
+      </script>
 </body>
 </html>

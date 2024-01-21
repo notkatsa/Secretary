@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Profile</title>
+    <link rel="stylesheet" href="../css/course.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="left">
+                <div class="logo"><img src="../images/logo.jpeg"width="70" height="80"></div>
+            </div>
+            <div class="right">
+                <div class="top">
+                    <div class="name" id="name">Panagiotis</div>
+                    <div class="usericon">   
+                         <i class="fas fa-user-edit"></i>
+                    </div>
+                    <div class="logout-button" onclick="logout()">
+                        <i class="fas fa-sign-out-alt"></i>
+                    </div>
+                </div>
+                <div class="bottom">
+                    <button id="button-info">Πληροφορίες</button>        
+                    <button id="button-grades">Βαθμολογία</button>
+                    <button id="button-courses">Μαθήματα</button>
+                    <button id="button-dilosi">Δήλωση</button>        
+                    <button id="button-sec">Γραμματεία</button>
+                    <button id="button-history">Ιστορικό</button>
+                </div>
+            </div>
+        </div>
+        <div class="content">
+                <h2>Edit Profile</h2>
+                <form id="editProfileForm">
+                    <div class="form-group">
+                        <label for="firstName">Όνομα</label>
+                        <input type="text" id="firstName" name="firstName" disabled >
+                    </div>
+                    <div class="form-group">
+                        <label for="lastName">Επώνυμο</label>
+                        <input type="text" id="lastName" name="lastName" disabled >
+                    </div>
+                    <div class="form-group">
+                        <label for="phoneNumber">Άριθμος Μητρώου</label>
+                        <input type="tel" id="id" name="id" disabled >
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email">
+                    </div>
+                    <div class="form-group">
+                        <label for="phoneNumber">Άριθμος Κινητού</label>
+                        <input type="tel" id="phoneNumber" name="phoneNumber">
+                    </div>
+                    <div class="form-group">
+                        <label for="phoneNumber">Ημερομηνία Γέννησης </label>
+                        <input type="date" id="date" name="dater">
+                    </div>
+                    <div class="form-group">
+                        <label for="phoneNumber">Διεύθυνση Κατοικίας</label>
+                        <input type="text" id="address" name="address">
+                    </div>
+                    <button type="submit">Save Changes</button>
+                </form>
+        
+
+            
+        </div>
+      </div>
+      <script src="./js/name.js"></script>
+      <script src="./js/change_pages.js"></script>
+      <script src="./js/editprofile.js"></script>
+</body>
+</html>

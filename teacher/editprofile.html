@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit Profile</title>
-    <link rel="stylesheet" href="./css/course.css">
+    <link rel="stylesheet" href="../css/course.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
 </head>
@@ -12,7 +12,7 @@
     <div class="container">
         <div class="header">
             <div class="left">
-                <div class="logo"><img src="images/logo.jpeg"width="70" height="80"></div>
+                <div class="logo"><img src="../images/logo.jpeg"width="70" height="80"></div>
             </div>
             <div class="right">
                 <div class="top">
@@ -20,23 +20,17 @@
                     <div class="usericon">   
                          <i class="fas fa-user-edit"></i>
                     </div>
+                    <div class="logout-button" onclick="logout()">
+                        <i class="fas fa-sign-out-alt"></i>
+                    </div>
                 </div>
                 <div class="bottom">
-                    <button id="button-info">Πληροφορίες</button>        
-                    <button id="button-grades">Βαθμολογία</button>
-                    <button id="button-courses">Μαθήματα</button>
-                    <button id="button-dilosi">Δήλωση</button>        
-                    <button id="button-sec">Γραμματεία</button>
-                    <button id="button-history">Ιστορικό</button>
+                    <button id="button-info1">Πληροφορίες</button>        
+                    <button id="button-grades1">Τα Βαθμολόγιά μου</button>
                 </div>
             </div>
         </div>
         <div class="content">
-            <title>Edit Profile</title>
-            <link rel="stylesheet" href="./css/style.css"> <!-- Link to your CSS file -->
-        </head>
-        <body>
-            <div class="container">
                 <h2>Edit Profile</h2>
                 <form id="editProfileForm">
                     <div class="form-group">
@@ -46,10 +40,6 @@
                     <div class="form-group">
                         <label for="lastName">Επώνυμο</label>
                         <input type="text" id="lastName" name="lastName" disabled >
-                    </div>
-                    <div class="form-group">
-                        <label for="phoneNumber">Άριθμος Μητρώου</label>
-                        <input type="tel" id="id" name="id" disabled >
                     </div>
                     <div class="form-group">
                         <label for="email">Email</label>
@@ -69,7 +59,6 @@
                     </div>
                     <button type="submit">Save Changes</button>
                 </form>
-            </div>
         
 
             

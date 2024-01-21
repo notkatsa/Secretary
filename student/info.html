@@ -4,26 +4,34 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/course.css">
+    <link rel="stylesheet" href="../css/course.css">
     <title>Info</title>
+    <script src="https://kit.fontawesome.com/b356d73572.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
   <div class="container">
     <div class="header">
         <div class="left">
-            <div class="logo"><img src="images/logo.jpeg"width="70" height="80"></div>
+            <div class="logo"><img src="../images/logo.jpeg"width="70" height="80"></div>
         </div>
         <div class="right">
             <div class="top">
                 <div class="name" id="name">Panagiotis</div>
-                <div class="usericon">D</div>
+                <div class="usericon">
+                    <i class="fas fa-user-edit"></i>
+                </div>
+                <div class="logout-button" onclick="logout()">
+                    <i class="fas fa-sign-out-alt"></i>
+                </div>
             </div>
             <div class="bottom">
-                <button id="button-info1">Πληροφορίες</button>        
-                <button id="button-courses1">Μαθήματα</button> 
-                <button id="button-grades1">Βαθμολογία</button>    
-                
-               
+                <button id="button-info">Πληροφορίες</button>        
+                <button id="button-grades">Βαθμολογία</button>
+                <button id="button-courses">Μαθήματα</button>
+                <button id="button-dilosi">Δήλωση</button>        
+                <button id="button-sec">Γραμματεία</button>
+                <button id="button-history">Ιστορικό</button>
             </div>
         </div>
     </div>
@@ -38,6 +46,6 @@
     </div>
   </div>
   <script src="./js/name.js"></script>
-  <script src="./js/change_pages_teachers.js"></script>
+  <script src="./js/change_pages.js"></script>
 </body>
 </html>

@@ -38,9 +38,14 @@ function addUserToLocalStorage(name, password, fullName, email) {
     grades.push({sdi: sdi, grades: templist});
     localStorage.setItem('grades', JSON.stringify(grades)); 
 
+    // add user to sec db
+    seclist = JSON.parse(localStorage.getItem('sec'));
+    seclist.push({sdi: sdi, reqs: []});
+    localStorage.setItem('sec', JSON.stringify(seclist));             
+
     //initialize their info
     existingUsersInfo = JSON.parse(localStorage.getItem("userInfo"));
-    existingUsersInfo.push({sdi: sdi, phoneNumber: -1, dateOfBirth:-1, Address: -1});  
+    existingUsersInfo.push({sdi: sdi, phoneNumber: -1, dateOfBirth:-1, address: -1});  
     localStorage.setItem("userInfo", JSON.stringify(existingUsersInfo));  
     console.log(`User added successfully: ${JSON.stringify(newUser)}`);
 }

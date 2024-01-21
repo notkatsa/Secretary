@@ -43,7 +43,8 @@ document.addEventListener("DOMContentLoaded", function () {
             secDiv.innerHTML = `
                 <h3>${title}</h3>
                 <p>Status: Pending</p>
-                <p>Date: ${new Date(date).toLocaleDateString()}</p>
+                <p>Ημερομηνία Υποβολής: ${new Date(date).toLocaleDateString()}</p>
+                <button>Εκτύπωση</button>
             `;
 
             // Append the created div to the history container
@@ -57,7 +58,7 @@ document.addEventListener("DOMContentLoaded", function () {
     selectedCoursesDiv.className = "history-card-selected-courses";
     selectedCoursesDiv.innerHTML = `
         <h3>Δήλωση Μαθημάτων</h3>
-        ${selectedCourses.length > 0 ? selectedCourses.map(course => `<p>${course}</p>`).join("") : "No selected courses"}
+        ${selectedCourses.length > 0 ? selectedCourses.map(course => `<p>${course}</p>`).join("") : "Δεν έχει γίνει υποβολή."}
     `;
 
     // Append the created div to the history container

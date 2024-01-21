@@ -32,8 +32,8 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("date").value = currentUserData.dateOfBirth;
   }
 
-  if (currentUserData.Address !== -1) {
-    document.getElementById("address").value = currentUserData.Address;
+  if (currentUserData.address !== -1) {
+    document.getElementById("address").value = currentUserData.address;
   }
 
   // Submit form event listener

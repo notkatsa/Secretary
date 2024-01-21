@@ -1,13 +1,1 @@
----success message sthn dilosi OK
-
----break sto alert otan kanoun ypobolh
-
--istoriko -> 2 istorika
-
----koumpi dilosi -> dilosi courses pou den exei perasei
-
--dhmiourgia neou bathmou bullet kathigites
-
----sign up
-
----css gia login kai index
+LOGOUT
