@@ -19,6 +19,12 @@ document.addEventListener("DOMContentLoaded", function () {
         // check if all input fields are filled
         e.preventDefault(); // Prevent the default form submission
 
+        if (!sessionStorage.getItem('login')) {
+            alert('Απαιτείται σύνδεση. Μεταφέρεστε στην σελίδα σύνδεσης.');
+            window.location.href = 'login.html'; // Redirect to the login page
+            return;
+        }
+
         var formIsValid= true;
         for (element of form.elements){
             if (element.value!==null) {

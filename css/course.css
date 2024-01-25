@@ -309,6 +309,10 @@ select option {
     cursor: pointer;
 }
 
+.info {
+    padding-right: 5px;
+}
+
 select option:hover {
     background-color: #e0e0e0;
 }
