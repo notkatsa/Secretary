@@ -174,8 +174,10 @@ document.addEventListener('DOMContentLoaded', function () {
             var isConfirmed = window.confirm("Θέλετε σίγουρα να υποβάλετε οριστικά τo βαθμολόγιο;");
             if (!isConfirmed) return;
             disableButtonsAndInputs(course);
+            
 
             // Mark the grades table as submitted in sessionStorage
+            saveGradesTableToSession(course);
             sessionStorage.setItem(`submitted${course}`, 'true');
         }
     }
