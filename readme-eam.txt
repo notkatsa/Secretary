@@ -1,29 +1,63 @@
-Επικοινωνία Ανθρώπου Μηχανής - Εργασία 3 |
-					 |
-Βαγγέλης Νικολάου sdi2100121		 |
-Παναγιώτης Κατσαιτης sdi2100059		 |	
-_________________________________________|
+# UI/UX Class Project 3 – University Secretary System  
 
-HTML-CSS-Javascript
+An interactive web-based university secretary system for students and instructors, implemented using **HTML, CSS, and Vanilla JavaScript**.  
 
-Παρακαλώ κατεβάστε το δημοφιλής vscode extension "Live Server" και στο index.html κάντε δεξί κλικ και επιλέξτε "Open with Live Server".
+🔗 **Live Demo:** [Secretary System](https://notkatsa.github.io/Secretary/)  
 
-Αφού το μάθημα ασχολείται κατα κόρον με το frontend δεν χωρίσαμε την εργασία σε frontend και backend με server και βάση. Αντιθέτως κάνουμε όλες τις λειτουργίες και την λογική του site στο frontend επίπεδο και αντί για βάση χρησιμοποιούμε το localStorage. Προφανώς δεν είναι σωστή πρακτική αλλά θεωρήσαμε πως αρκεί αυτός ο τρόπος για τις απαιτήσεις του μαθήματος.
+---
 
-Στην εργασία έχουν υλοποιηθεί όλα τα ζητούμενα για τους φοιτητές και τους δασκάλους και επιπλέον το bonus δυνατότητα εξαγωγής σε csv ή εκτπυωσης βαθμολογίας σε μορφή pdf για τους διδασκοντες.
+## ✨ Features  
+✅ **Student & Instructor Management**  
+✅ **Course Registration & Tracking**  
+✅ **Detailed Grade Analytics**  
+✅ **Certificate Requests**  
+✅ **Export Grades to CSV/PDF (Bonus Feature)**  
+✅ **Login Functionality & Profile Management**  
 
-Περιήγηση στο site: 
-Μαθητής
--Ως αρχική εμφανίζεται το index.html όπου επιλέγει ο χρήστης αν είναι καθηγητής ή φοιτητής. Αφού πατήσει σε κάποια επιλογή οδηγείται στις "Πληροφορίες", όπου μπορεί να δει γενικες πληροφορίες και ολες τις λειτουργίες που του προσφέρονται. 
--Για τις υπόλοιπες λειτουργικότητες (και στου διδάσκοντα) απαιτείται σύνδεση οπότε ο χρήστης διαλέγει αν θα συνδεθεί με το κουμπί ή θα το κάνει όταν χρειαστεί (πχ. δήλωση, βαθμοί). 
-Έχουμε δημιουργησει 9 χρήστες. Με username user1 και password: password1 συνδέεται. Υπάρχει δυνατότητα δημιουργίας λογαριασμού.
--Όταν κάνει login το κουμπί αντικαταστάται με κουμπί για login και εμφανίζεται το όνομα του στο navbar.
--Επιλέγοντας "Βαθμολογία" εμφανιζονται τα μαθηματα που εχει δοσει σε καποια προηγουμενη εξεταστικη και εχει περασει ή εχει αποτυχει. 
--Επιλέγοντας "Μαθήματα" μπορει να δει αναλυτικα τα μαθηματα που προσφέρονται στην σχολη ανα εξαμηνο και αν επιθυμει να δει παραπανω λεπτομερειες κανει click στο ονομα του μαθηματος, οπου του δινονται περισσοτερες λεπτομερειες (Τύπος Μαθήματος, Διδακτικές Ώρες, Διδασκοντας, Βιβλιογραφία, Συντομη Περιγραφη Μαθηματος). Αυτό εχει συμβει ενδεικτικα για τα δυο πρωτα μαθηματα τα υπολοιπα ακολουθουν παρομοιο μοτιβο. 
--Στην "Δήλωση" να δηλωσει τα μαθηματα που επιθυμει να παρακολουθησει το τρέχον εξαμηνο κάνοντας αναζητηση το ονομα του μαθήματος,μπορει να προσθεσει στην δηλωση του τα μαθηματα που χρωσταει απο προηγουμενες εξεταστικες, να αφαιρεσει καποιο μαθημα που εχει επιλεξει. Παρέχεται η δυνατοτητα οριστικης υποβολης ή προσωρινης αποθήκευσης. Στο κατω μερος της σελιδας αναφερεται ποσα μαθηματα μπορει να επιλεξει ακομα. 
--Επιπλεον, στην "Γραμματεια" μπορει να αιτηθεί για καποιο πιστοποιητικο (ΔΟΥ, Αναλυτική, Βαθμολογία)με τα στοιχεια του να γινονται autofill. 
--Στο "ιστορικό" μπορει να δει τις αιτησεις που εχει κανει στην γραμματεία και τις δηλωσεις μαθημάτων με την τρεχουσα κατασταση τους. 
-Καθηγητές
--Έχουμε συνδυάσει την παρακολούθηση βαθμολογίου με την δημιουργία νέα βαθμολογίου. Δηλαδή ο καθηγητής επιλέγοντας κάποιο μάθημα παρακολουθεί τις βαθμολογίες στο μάθημα αυτό και ταυτόχρονα μπορεί να αλλάξει τους βαθμούς. Σε περίπτωση που γίνει οριστική υποβολή δεν μπορεί να επεξεργαστεί περαιτέρω τουσ βαθμούς.
+---
 
-Και για τους δυο: Υπαρχουν δυο κουμπια στο πανω μερος της σελιδας, το πρωτο ειναι για επεξεργασια προφιλ οπου μπορει να επεξεργαστει καποια στοιχεια του αλλα οχι το ΑΜ και το ονοματεπωνυμο του, το δευτερο κουμπι ειναι το log out.
+## 📌 System Navigation  
+
+### 🎓 Students  
+- **Home Page:** Choose between "Student" or "Instructor".  
+- **Information:** View general guidelines and available functionalities.  
+- **Login:** Required to access features like course registration and grades.  
+  - **Demo Account:** *Username: user1 | Password: password1*  
+  - Option to create a new account.  
+- **Grades:** View passed & failed courses from previous exam periods.  
+- **Courses:**  
+  - Browse courses offered per semester.  
+  - View course details (type, hours, instructor, bibliography, description).  
+- **Course Registration:**  
+  - Select current semester courses and pending/overdue courses.  
+  - Add/remove courses, temporarily save selections, and submit final registration.  
+  - Indicator for available course slots.  
+- **Secretariat:**  
+  - Request certificates (Tax Office, Detailed Grade Report, General Transcript).  
+  - Autofill personal details.  
+- **History:** View submitted requests and registrations with their current status.  
+
+---
+
+### 🧑🏫 Instructors  
+- **Gradebook:**  
+  - View and edit student grades per course.  
+  - Modify grades before final submission.  
+  - Changes are locked after final submission.  
+
+---
+
+### 🔐 Profile Management & Logout  
+- **Edit Profile:** Users can update their details, **except Student ID and full name**.  
+- **Logout:** Available logout button at the top of the page.  
+
+---
+
+## 🚀 Technologies  
+- **Frontend:** HTML, CSS, Vanilla JavaScript  
+- **Hosting:** GitHub Pages  
+
+---
+
+## 📜 License  
+This project was developed for a UI/UX class and is available for educational use.
